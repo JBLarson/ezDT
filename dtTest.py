@@ -10,11 +10,11 @@ def convertUnix(epochTime):
 	return localTime
 
 
-def datetimeToEpoch(ogDatetime):
+def datetimeToUnix(ogDatetime):
 	ogDatetime=datetime.datetime.strptime(ogDatetime, "%Y-%m-%d %H:%M:%S")
-	epochTime = ogDatetime.strftime('%s')
+	unixTime = ogDatetime.strftime('%s')
 
-	return epochTime
+	return unixTime
 
 
 todayFull = datetime.datetime.now()
@@ -24,7 +24,7 @@ today = todaySplit[0]
 print(today)
 
 
-unixToday = convertUnix(today)
+unixToday = datetimeToUnix(today)
 print(unixToday)
 
 
