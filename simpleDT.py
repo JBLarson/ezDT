@@ -6,7 +6,8 @@ import datetime
 import dateparser
 
 
-def convertUnix(epochTime):
+def unixToDatetime(epochTime):
+	epochTime = int(epochTime)
 	localTime = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(epochTime))
 	return localTime
 
@@ -31,19 +32,27 @@ def subtractDays(ogDatetime, nDays):
 	return newDate
 
 
+def today():
+	todayFull = datetime.datetime.now()
+	todaySplit = str(todayFull).split(".")
+	today = todaySplit[0]
+	return today
 
-todayFull = datetime.datetime.now()
-todaySplit = str(todayFull).split(".")
-today = todaySplit[0]
+
+today = today()
 print("Todays date: " + str(today))
 
 unixTodayTest = datetimeToUnix(today)
-print("\nTodays date in unix time: " + str(unixTodayTest))
+print("Todays date in unix time: " + str(unixTodayTest))
 
+unixToDatetimeTest = unixToDatetime(unixTodayTest)
+print("Unix time converted back to DT: " + str(unixToDatetimeTest))
 
 addDaysTest = addDays(today, 14)
-print("\nTwo weeks from now date: " + str(addDaysTest))
+print("Two weeks from now date: " + str(addDaysTest))
+
 
 subtractDaysTest = subtractDays(today, 14)
-print("\nTwo weeks ago date: " + str(subtractDaysTest))
+print("Two weeks ago date: " + str(subtractDaysTest))
+
 
