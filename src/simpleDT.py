@@ -1,7 +1,6 @@
 
 import time
 import datetime
-import dateparser
 
 
 def unixToDatetime(epochTime):
@@ -16,16 +15,24 @@ def datetimeToUnix(ogDatetime):
 	return unixTime
 
 
+def strToDT(ogDTstr):
+	format = "%Y-%m-%d %H:%M:%S"
+	dt_object = datetime.datetime.strptime(ogDTstr, format)
+	return dt_object
+
+
 def addDays(ogDatetime, nDays):
 	ogDtTypeStr = str(type(ogDatetime))
-	if 'str' in ogDtTypeStr:	ogDatetime = dateparser.parse(ogDatetime)
+	if 'str' in ogDtTypeStr:	
+		ogDatetime = strToDT(ogDatetime)
 	newDate = ogDatetime + datetime.timedelta(days=nDays)
 	return newDate
 
 
 def subtractDays(ogDatetime, nDays):
 	ogDtTypeStr = str(type(ogDatetime))
-	if 'str' in ogDtTypeStr:	ogDatetime = dateparser.parse(ogDatetime)
+	if 'str' in ogDtTypeStr:
+		ogDatetime = strToDT(ogDatetime)
 	newDate = ogDatetime - datetime.timedelta(days=nDays)
 	return newDate
 
@@ -37,4 +44,3 @@ def today():
 	return today
 
 
-      
