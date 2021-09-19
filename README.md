@@ -1,7 +1,5 @@
-# simpleDT
-simple python functions for the datetime, time, and dateparser modules
-
-simpleDT is a package that combines functionality from datetime, time, and dateparser.
+# ezDT
+simple python functions for the datetime & time built-in packages
 
 today()
 returns todays date in '%Y-%m-%d %H:%M:%S' format
