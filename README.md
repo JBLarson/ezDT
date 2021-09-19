@@ -1,4 +1,7 @@
 # ezDT
+
+>> pip3 install ezDT
+
 simple python functions for the datetime & time built-in packages
 
 today()
