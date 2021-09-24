@@ -1,6 +1,9 @@
 # ezDT
 
 >> pip3 install ezDT
+or
+>> pip install ezDT
+
 
 simple python functions for the datetime & time built-in packages
 
